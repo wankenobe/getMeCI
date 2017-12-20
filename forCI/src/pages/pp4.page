@@ -1,0 +1,5 @@
+<apex:page Controller="tpc" >
+    <apex:form >
+        <apex:commandButton action="{!dosubmit}" value="Do Submit" />
+    </apex:form>
+</apex:page>

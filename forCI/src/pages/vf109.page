@@ -1,0 +1,22 @@
+<apex:page controller="DynamicVisualforceController">
+  <apex:form >
+        <apex:pageBlock >
+           Input Here  : <apex:inputText id="inptID"/>
+                       <apex:commandButton onclick="MyjavaFunction('{!$Component.inptID}')" value=" Submit "/>
+        </apex:pageBlock>
+  </apex:form>
+  
+  <!-- Java script starts Here -->
+  <script>
+   function MyjavaFunction(ReceiveInputID){
+   
+    var inputValue = document.getElementById(ReceiveInputID).value;
+         if(inputValue == ''){
+            alert('You did not eneter any value in input box');
+         } 
+         else
+            alert(' You entered :: '+inputValue); 
+   }
+  </script> 
+   
+</apex:page>

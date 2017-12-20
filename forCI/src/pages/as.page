@@ -1,0 +1,11 @@
+<apex:page >
+<apex:pageBlock title="You can write below" >
+This is my Area<br/><p/>
+are you a Rockstar??
+
+</apex:pageBlock>
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Rockstar</h1>
+  This is your new Page: as
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

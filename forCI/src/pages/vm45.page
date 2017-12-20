@@ -1,0 +1,8 @@
+<apex:page controller="popup">
+   <apex:form >
+    <apex:commandButton value="Show" action="{!showPopup}"/>
+    <apex:outputPanel layout="block" rendered="{!displayPopup}">
+      <apex:commandButton value="hide" action="{!closePopup}"/>
+    </apex:outputPanel>
+   </apex:form>
+</apex:page>

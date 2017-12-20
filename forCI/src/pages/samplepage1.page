@@ -1,0 +1,20 @@
+<apex:page standardController="Contact" >
+    <apex:form >
+        
+        <apex:pageBlock title="Edit Contact">
+
+            <apex:pageBlockSection columns="1">
+                <apex:OutputField value="{!Contact.FirstName}"/>
+                <apex:OutputField value="{!Contact.LastName}"/>
+                <apex:OutputField value="{!Contact.Email}"/>
+                <apex:OutputField value="{!Contact.Birthdate}"/>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value="Save"/>
+            </apex:pageBlockButtons>
+
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

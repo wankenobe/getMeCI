@@ -1,0 +1,27 @@
+<apex:page controller="sample1">
+<apex:form >
+    <apex:pageBlock title="List of Accounts and Opportunity">
+    <apex:pageBlockSection >
+    <apex:pageBlock title=" Accounts">
+      <apex:pageBlockTable value="{!acts}" var="a">
+        <apex:column value="{!a.Name}"/>
+        <apex:column value="{!a.Industry}"/>
+       </apex:pageBlockTable>
+       </apex:pageBlock>
+       <apex:pageBlock title="Opportunity">
+     <apex:pageBlockTable value="{!oppo}" var="o">
+        <apex:column value="{!o.Name}"/>
+        <apex:column value="{!o.StageName}"/>
+          
+        
+     
+     </apex:pageBlockTable>
+      </apex:pageBlock>
+    </apex:pageBlockSection>
+  
+    </apex:pageBlock>
+    <apex:commandButton value="go to tab" action="{!tab}"/>
+
+  <apex:inlineEditSupport />/>
+  </apex:form>
+</apex:page>

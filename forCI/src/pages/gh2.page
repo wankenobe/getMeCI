@@ -1,0 +1,15 @@
+<apex:page standardController="Account" extensions="ActivityHistory_ctlr">
+<apex:pageBlock >
+    <apex:pageBlockTable value="{!taskEventList}" var="row">
+        <apex:column value="{!row.Subject}"/>
+        <apex:column value="{!row.whatId}"/>
+        <apex:column value="{!row.ActivityDate}"/>
+        <apex:column value="{!row.OwnerId}"/>
+               
+    <apex:column headerValue="Owner Name">
+<apex:outputlink value="/{!row.ownerName}">{!row.ownername}</apex:outputlink>
+</apex:column>
+       <!-- <apex:column value="{!row.LastModifiedDate}"/> !-->
+    </apex:pageBlockTable>
+</apex:pageBlock>
+</apex:page>

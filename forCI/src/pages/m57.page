@@ -1,0 +1,90 @@
+<apex:page standardController="Opportunity" extensions="AnnualTouchpointPlanningController" >
+ <apex:form >
+ <div align="center">
+                 <apex:commandButton value="Save" action="{!save}" id="saveButton" />
+</div>
+ <apex:pageBlock id="pb">
+<apex:pageMessages ></apex:pageMessages>
+
+
+  <!--  <div align="center" draggable="false" >
+ <apex:commandButton action="{!save}" value="Save" id="theButton"  /> </div> -->
+  
+
+    <apex:pageBlockTable value="{!TaskList}" var="d">
+    
+   
+    
+      <apex:column headerValue="Subject">   
+                    <apex:outputField value="{!d.subject}">  
+         <apex:inlineEditSupport event="ondblclick" 
+            rendered="{!(d.subject!=NUll)&&
+                      (d.subject!=Null) }"/>                      
+</apex:outputField> </apex:column>
+
+
+      
+                 <apex:column headerValue="Type">   
+                    <apex:outputField value="{!d.Type}">  
+         <apex:inlineEditSupport event="ondblclick" 
+            rendered="{!(d.Type!=NUll)&&
+                      (d.Type!=Null) }"/>                      
+</apex:outputField> </apex:column>
+    
+              <!--      <apex:column value="{!d.subject}" title="Subject"/>
+
+                    <apex:column value="{!d.Type}" title="Type"/>   -->
+                <!--    
+                    
+                 <apex:column headerValue="Earliest Date">   
+                    <apex:outputField value="{!d.EarliestDate__c}">  
+         <apex:inlineEditSupport event="ondblclick" 
+            rendered="{!(d.EarliestDate__c!=NUll)&&
+                     <!-- (d.EarliestDate__c!=Null) }"/>                      
+</apex:outputField> </apex:column>
+
+            <!--        
+                  <apex:column headerValue="Earliest Date">
+                           <apex:outputText value="{0,date,MM/dd/yyyy}">
+                            <apex:param value="{!d.EarliestDate__c}" />
+                        </apex:outputText> 
+                     </apex:column>  -->
+                    <!-- 
+                     
+                   <apex:column headerValue="Deadline Date">   
+                    <apex:outputField value="{!d.ActivityDate}">  
+         <apex:inlineEditSupport event="ondblclick" 
+            rendered="{!(d.ActivityDate!=NUll) }"/>                      
+             </apex:outputField> </apex:column>  
+                     
+                     
+                   <!-- <apex:column headerValue="Actual Date">   
+                  <!--  <apex:outputField value="{!d.ActualDate__c}"> !-->
+       <!--  <apex:inlineEditSupport event="ondblclick" 
+            rendered="{!(d.ActualDate__c!=NUll) }"/>                      
+             </apex:outputField> </apex:column>  
+                     
+              
+                   
+                    <apex:column title="Close">
+                    
+                    <apex:commandLink value="Close" action="{!deleteCon}" reRender="pb"  oncomplete="window.top.location = '/{!Opportunity.id}';">
+                   <apex:param value="{!d.id}" assignTo="{!dcid}" name="dtlIdParam"/>
+             </apex:commandLink>
+                    
+                    </apex:column>
+                   
+        <apex:inlineEditSupport event="ondblClick" 
+                        showOnEdit="saveButton,cancelButton" hideOnEdit="editButton" /> 
+          
+          
+ </apex:pageBlockTable>
+ 
+ <!-- <apex:pageBlockButtons > 
+                
+                <apex:commandButton value="Save" action="{!save}" id="saveButton" />
+            </apex:pageBlockButtons>  -->
+  </apex:pageBlockTable>
+ </apex:pageblock>
+</apex:form>
+</apex:page>

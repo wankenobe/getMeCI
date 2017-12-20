@@ -1,0 +1,15 @@
+<apex:page controller="c6">
+    <apex:pageBlock title="List of Direct and Channel Accounts">
+    <apex:pageblocksection >
+        <apex:pageBlock title="List of Direct">
+             <apex:pageBlockTable value="{!directacts}" var="a">
+                           <apex:column value="{!a.Name}"/>
+                           <apex:column value="{!a.Type}"/>
+                           <apex:column value="{!a.Industry}"/>
+                           <apex:column value="{!a.Phone}"/>
+                           <apex:column value="{!a.Fax}"/>   
+                </apex:pageBlockTable>
+                </apex:pageBlock>
+                 </apex:pageblocksection>  
+                 </apex:pageBlock>
+</apex:page>
